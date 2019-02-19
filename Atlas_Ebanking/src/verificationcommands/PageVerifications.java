@@ -13,7 +13,6 @@ public class PageVerifications {
 		driver.get("http://seleniumhq.org");
 		driver.manage().window().maximize();
 		
-		
 		//Capture current window title
 		String Runtime_title=driver.getTitle();
 		System.out.println("current window title is => "+Runtime_title);

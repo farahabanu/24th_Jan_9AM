@@ -17,8 +17,6 @@ public class Unexpected_AlertsToHandle
 		 * FAQ:--> How to handle unexpected popups at webpage
 		 * 
 		 */
-		
-		
 		try {
 			
 			driver=new ChromeDriver();

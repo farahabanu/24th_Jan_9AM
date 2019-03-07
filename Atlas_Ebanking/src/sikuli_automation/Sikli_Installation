@@ -1,0 +1,17 @@
+Sikuli:-->
+
+	Automate what you see on a computer monitor
+	
+	Installation:-->
+				[Latest version not required installation]
+				Download sikulix.jar file
+				URL:--> https://raiman.github.io/SikuliX1/downloads.html
+				configure file to current selenium project.  [Using java build path]
+				
+			Why we use Sikuli in Seleneium:-->
+				
+						=> Selenium failed to perfrom Windown interations, To  handle
+							window interactions in selenium we can implement sikuli scripting.
+				
+				
+				

@@ -29,17 +29,17 @@ public class Screen_With_TimeStamp
 		 * 		   Unzip file and configure all executable jar files to selenium-project.
 		 */
 		
-		//Create simple date formatter
-		SimpleDateFormat df=new SimpleDateFormat("yyyy/MMM/dd/ hh-mm-ss");
-		//Get Current System date
-		Date d=new Date();
-		//convert default system date using simple date formatter
-		String time=df.format(d);
 		
+		//Create object for date
+		Date d=new Date();
+		//Create simple date foramatter
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MMM/dd/ hh-mm-ss");
+		//using simpel date foramt convert date
+		String time=sdf.format(d);
 		
 
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("screens\\"+time+"image.png"));
+		FileUtils.copyFile(src, new File("screens\\"+time+"  image.png"));
 		
 
 	}

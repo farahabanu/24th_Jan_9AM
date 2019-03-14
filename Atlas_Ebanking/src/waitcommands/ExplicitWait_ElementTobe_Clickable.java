@@ -25,9 +25,9 @@ public class ExplicitWait_ElementTobe_Clickable
 		
 		//Identify location and store into referral
 		By HydCity=By.linkText("Hyderabad, IN - Rajiv Gandhi International (HYD)");
-		new WebDriverWait(driver, 10).until
+		new WebDriverWait(driver, 20).until
 		(ExpectedConditions.elementToBeClickable(HydCity)).click();
-
+		System.out.println("Element clicked");
 	}
 
 }

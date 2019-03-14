@@ -26,8 +26,7 @@ public class Wait_Until_Inputvalue_LoadAt_Editbox {
 		
 		//Apply explicit wait until required text visible at editbox.
 		new WebDriverWait(driver, 50).until
-		(ExpectedConditions.textToBePresentInElementValue
-				(Email_locator, "mindqdsnr"));
+		(ExpectedConditions.textToBePresentInElementValue(Email_locator, "mindqdsnr"));
 		System.out.println("mindqdsnr text visible at editbox as input");
 		
 

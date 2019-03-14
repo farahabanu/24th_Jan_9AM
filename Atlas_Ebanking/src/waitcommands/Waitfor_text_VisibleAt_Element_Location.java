@@ -7,7 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Waitfor_text_VisibleAt_Element_Location {
+public class Waitfor_text_VisibleAt_Element_Location 
+{
 
 	public static void main(String[] args) 
 	{
@@ -20,7 +21,7 @@ public class Waitfor_text_VisibleAt_Element_Location {
 		//Enter email and press enter key at keyboard
 		driver.findElement(By.id("identifierId")).clear();
 		driver.findElement(By.id("identifierId"))
-		.sendKeys("qadarshan@gmail.com");
+		.sendKeys("qadarshan@gmail.com",Keys.ENTER);
 		
 		//Identify location and store into referral
 		By text_location=By.xpath("//content[contains(.,'Welcome')]");

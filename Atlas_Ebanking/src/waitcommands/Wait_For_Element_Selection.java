@@ -19,12 +19,17 @@ public class Wait_For_Element_Selection
 		
 		
 		//Identify Element
-		By Roundtrip_locator=By.xpath("//input[@value='RoundTrip']");
+		By Roundtrip_Radio_btn=By.xpath("//input[@value='RoundTrip']");
+		
 		//Create object for explicit wait
-		WebDriverWait wait=new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementSelectionStateToBe
-				(Roundtrip_locator, true));
-		System.out.println("Selection state is true");
+		WebDriverWait wait=new WebDriverWait(driver, 50);
+		wait.until(ExpectedConditions
+				.elementSelectionStateToBe(Roundtrip_Radio_btn, true));
+		System.out.println("Roundtrip radio button selected");
+		
+		
+		
+		
 	}
 
 }

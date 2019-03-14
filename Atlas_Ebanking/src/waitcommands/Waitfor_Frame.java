@@ -32,8 +32,7 @@ public class Waitfor_Frame
 		//Wait for frame
 		WebDriverWait wait=new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(modalFrame));
-		System.out.println("Control available at modal frame");
-
+		System.out.println("Controls availabel at modal frame");
 
 		//Enter Mobile number
 		WebElement mobileNum=driver.findElement(By.xpath("//input[@id='mobileNoInp']"));

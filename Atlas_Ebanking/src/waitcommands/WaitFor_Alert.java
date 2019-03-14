@@ -18,13 +18,13 @@ public class WaitFor_Alert {
 		
 		//Identify Location
 		WebElement Search_btn=driver.findElement(By.cssSelector("input[value='Search']"));
-		Search_btn.click();
+		//Search_btn.click();
 		
 		
 		//Wait for alert presented at browser window
 		new WebDriverWait(driver, 30).until
 		(ExpectedConditions.alertIsPresent()).accept();
-		System.out.println("Alert closed");
+		System.out.println("Alert presented and closed");
 		
 		
 		//Close alert without apply switch command

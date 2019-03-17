@@ -1,0 +1,15 @@
+Collection : Root interface with basic methods like add(), remove(), 
+             contains(), isEmpty(), addAll(), ... etc.
+ 
+Set : Doesn't allow duplicates and elements are not-order. 
+						1.HashSet
+						2.TreeSet
+
+List : Can contain duplicates and elements are ordered. 
+						1.ArrayList
+						2.LinkedList
+
+Map : Contains Key value pairs. Doesn't allow duplicates.  
+
+The difference between Set and Map interface is that in Set we 
+have only keys, whereas in Map, we have key, value pairs.

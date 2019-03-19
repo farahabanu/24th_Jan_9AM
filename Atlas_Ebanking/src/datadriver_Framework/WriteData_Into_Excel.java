@@ -8,13 +8,13 @@ import java.io.IOException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Write_CellData {
+public class WriteData_Into_Excel {
 
 	public static void main(String[] args) throws IOException 
 	{
-		
 		//Target file 
-		FileInputStream fi=new FileInputStream("TestData\\InputData.xlsx");
+		String filepath="C:\\Users\\Administrator\\git\\24th_Jan_9AM\\Atlas_Ebanking\\src\\datadriver_Framework\\";
+		FileInputStream fi=new FileInputStream(filepath+"InputData.xlsx");
 		System.out.println("file located");
 				
 		//Access workbook
@@ -34,9 +34,10 @@ public class Write_CellData {
 		
 		
 		//Create output workbook
-		book.write(new FileOutputStream("TestData\\OP.xlsx"));
-		book.close();   //save data
+		book.write(new FileOutputStream(filepath+"OP.xlsx"));
+		book.close();  //Write and Save Data into Excel
 		
+
 	}
 
 }

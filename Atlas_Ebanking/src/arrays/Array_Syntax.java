@@ -1,6 +1,7 @@
 package arrays;
 
-public class Array_Syntax {
+public class Array_Syntax 
+{
 
 	public static void main(String[] args) 
 	{

@@ -49,9 +49,7 @@ public class Date_Picker_Active_Dates_Selection
 			
 			
 			
-			
-			
-			
+		
 			WebElement Next_month_btn=driver.findElement(By.xpath("//a[@title='Next month']"));
 			Next_month_btn.click();
 			Thread.sleep(3000);

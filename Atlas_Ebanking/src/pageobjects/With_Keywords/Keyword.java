@@ -1,4 +1,4 @@
-package method_parameter;
+package pageobjects.With_Keywords;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Repository 
+public class Keyword 
 {
 	
 	public static WebDriver driver;
@@ -91,22 +91,7 @@ public class Repository
 	}
 	
 	
-	/*
-	 * keywordname:--> Enter text into editbox [Identification only with xpath]
-	 * Author:-->
-	 * CreatedDate:-->
-	 * UpdatedDate:-->
-	 * LocalParametersused:-->
-	 * ReviewedBy:-->
-	 */
-	public void Enter_text(String Element_Xpath,String input)
-	{
-		//identify location
-		WebElement Editbox=driver.findElement(By.xpath(Element_Xpath));
-		Editbox.clear();
-		Editbox.sendKeys(input);
-	}
-	
+
 	
 	/*
 	 * keywordname:--> Enter text into editbox[Using any locator]
@@ -116,10 +101,10 @@ public class Repository
 	 * LocalParametersused:-->
 	 * ReviewedBy:-->
 	 */
-	public void Enter_text(By locator,String input)
+	public void Enter_text(WebElement Element,String input)
 	{
 		//identify location
-		WebElement Editbox=wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement Editbox=wait.until(ExpectedConditions.visibilityOf(Element));
 		Editbox.clear();
 		Editbox.sendKeys(input);
 		
@@ -134,9 +119,9 @@ public class Repository
 	 * Parametersused:-->
 	 * Lasupdated Date:--->
 	 */
-	public void Select_dropdown(By locator, String Option_name)
+	public void Select_dropdown(WebElement Element, String Option_name)
 	{
-		WebElement Dropdown=wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement Dropdown=wait.until(ExpectedConditions.visibilityOf(Element));
 		new Select(Dropdown).selectByVisibleText(Option_name);
 	}
 	
@@ -148,9 +133,9 @@ public class Repository
 	 * Parametersused:-->
 	 * Lasupdated Date:--->
 	 */
-	public void Click_element(By locator)
+	public void Click_element(WebElement Element)
 	{
-		driver.findElement(locator).click();
+		Element.click();
 	}
 	
 	
@@ -162,9 +147,9 @@ public class Repository
 	 * Parametersused:-->
 	 * Lasupdated Date:--->
 	 */
-	public void Wait_and_click(By locator)
+	public void Wait_and_click(WebElement Element)
 	{
-		wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(Element)).click();
 	}
 	
 	
@@ -176,9 +161,9 @@ public class Repository
 	 * Parametersused:-->
 	 * Lasupdated Date:--->
 	 */
-	public void wait_for_Element_visible(By locator)
+	public void wait_for_Element_visible(WebElement Element)
 	{
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		wait.until(ExpectedConditions.visibilityOf(Element));
 	}
 	
 	
@@ -190,9 +175,9 @@ public class Repository
 	 * Parametersused:-->
 	 * Lasupdated Date:--->
 	 */
-	public void MouseHover(By locator)
+	public void MouseHover(WebElement element)
 	{
-		WebElement Element=wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement Element=wait.until(ExpectedConditions.visibilityOf(element));
 		new Actions(driver).moveToElement(Element).perform();
 	}
 	

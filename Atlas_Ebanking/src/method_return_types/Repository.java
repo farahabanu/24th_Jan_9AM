@@ -1,4 +1,4 @@
-package method_parameter;
+package method_return_types;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -254,8 +255,81 @@ public class Repository
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
 
+	}
+	
+	//==============user-defined-keywords============
+	
+	/*
+	 * MethodName:-->Verify title presented at webpage
+	 * Author:-->
+	 * CreatedON:-->
+	 * ReviewedBy:-->
+	 * Parametersused:-->
+	 * Lasupdated Date:--->
+	 */
+	public boolean isTitle_presented(String Exp_title)
+	{
+		try {
+			boolean flag=wait.until(ExpectedConditions.titleContains(Exp_title));
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
 		
 	}
+	
+	/*
+	 * MethodName:-->Verify url presented at webpage
+	 * Author:-->
+	 * CreatedON:-->
+	 * ReviewedBy:-->
+	 * Parametersused:-->
+	 * Lasupdated Date:--->
+	 */
+	public boolean isurl_presented(String Exp_url)
+	{
+		try {
+			boolean flag=wait.until(ExpectedConditions.urlContains(Exp_url));
+			return true;
+		} catch (TimeoutException e) {
+			return false;
+		}
+		
+	}
+	
+	
+	
+	/*
+	 * MethodName:-->Verify text visible at webpage
+	 * Author:-->
+	 * CreatedON:-->
+	 * ReviewedBy:-->
+	 * Parametersused:-->
+	 * Lasupdated Date:--->
+	 */
+	public boolean Verify_text_visible(String Exp_text)
+	{
+		WebElement Page=driver.findElement(By.tagName("body"));
+		String page_visible_text=Page.getText();
+		boolean flag=page_visible_text.contains(Exp_text);
+		return flag;
+	}
+	
+	
+	/*
+	 * MethodName:-->Verify text visible at webpage
+	 * Author:-->
+	 * CreatedON:-->
+	 * ReviewedBy:-->
+	 * Parametersused:-->
+	 * Lasupdated Date:--->
+	 */
+	public boolean Verify_text_presentedAt_element(By locator,String text)
+	{
+		boolean flag=wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+		return flag;
+	}
+	
+	
 }

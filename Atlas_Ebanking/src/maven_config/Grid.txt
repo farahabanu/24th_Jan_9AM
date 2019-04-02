@@ -1,0 +1,256 @@
+
+Introduction
+		URL:--->
+		https://github.com/SeleniumHQ/selenium/wiki/Grid2
+
+Grid allows you to :
+
+    1. scale by distributing tests on several machines ( parallel execution )
+
+    2. manage multiple environments from a central point, making it easy 
+        to run the tests against a vast combination of browsers / OS.
+
+
+Download selenium stand alone jar file
+
+
+		http://seleniumhq.org/
+
+	Create Folder And place Jar file--->
+
+
+
+---------------------------Grid Configuration------------------>>
+
+
+The Hub is the central point that will receive all the test request and 
+	distribute them to the right nodes. 
+
+
+Note:-->   move to jar folder--> Hold Shift---> 
+		use Right click---> Select open command window here
+
+
+//Run hub using below command
+
+java -jar selenium-server-standalone-2.53.1.jar  -role hub
+
+
+//Run global node using below command
+
+java -jar selenium-server-standalone-2.53.1.jar -role node -hub http://localhost:4444/grid/register
+
+
+
+//Run Specific node with different requirement
+
+java -jar selenium-server-standalone-2.53.1.jar -role node -port 1234  -hub http://localhost:4444/grid/register -browser browserName=firefox,maxInstances=2
+
+
+//Run Specific node with Diff OS and Instance
+java -jar selenium-server-standalone-2.53.1.jar -role node -port 1111  -hub http://localhost:4444/grid/register -browser browserName=chrome,maxInstances=2,platform=LINUX 
+
+
+
+	DesiredCapabilities capability = DesiredCapabilities.firefox();
+	  
+	  WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+	  driver.get("http://google.com");
+	  driver.manage().window().maximize();
+
+
+-------------------------Maven Configuration-------------------
+	Maven is a management tool it build projects using project object model		[POM]
+	
+
+
+1. Make sure java is installed
+
+	cmd:--> java -version
+
+navigation to open properties window:--->
+
+	start menu---> right click on computer---> properties---> Adavnced system seetings
+	---> Click Environment Variable
+
+
+2.Set Environment Variable With JAVA_HOME , and specify value as java location
+
+	
+	JAVA_HOME   C:\Program Files\Java\jdk1.8.0_20
+
+
+
+3.Download maven
+
+	https://maven.apache.org/download.cgi
+
+	Download latest zip format file 
+
+	Create folder in any drive
+	
+	copy zip file and unZip file
+
+
+4.Set Environment path for Maven with MAVEN_HOME
+
+
+	MAVEN_HOME  C:\maven\apache-maven-3.3.1
+
+
+
+5.Append maven path to system path variable
+	
+
+		;C:\maven\apache-maven-3.3.1\bin
+    System path	;%MAVEN_HOME%\bin
+
+
+6.Append java path to system path variable
+
+     System path:---->
+			%JAVA_HOME%\bin;
+
+-------------Verify maven configuration
+
+	cmd : mvn --version
+==================================================>>
+
+
+Creation of maven project in eclipse:--->
+
+nav:--> In eclipse---> File--->New--->Others---->maven --->click mavenproject
+	--->Click next
+
+	--> select create simple project
+
+	--> Enter Group id(package name) as com.webdriver
+	--> Enter artificat id(name of project) selenium project
+
+
+	After creation of project-------> under project click on pom.xml
+
+
+	--. Add dependencies to pom.xml
+
+get this dependencies in  http://mvnrepository.com/search
+
+  <dependencies>
+  
+  		<dependency>
+       			 <groupId>org.seleniumhq.selenium</groupId>
+      			  <artifactId>selenium-java</artifactId>
+       			 <version>2.46.0</version>
+    		</dependency>  
+    
+    		<dependency>
+  			<groupId>org.testng</groupId>
+  			<artifactId>testng</artifactId>
+ 			<version>6.1.1</version>
+  			<scope>test</scope>
+		</dependency>
+  
+  </dependencies>
+
+
+
+
+Note:--> After completed adding dependencies, Right click on maven project
+		--->Select Run As--->Maven Install
+
+
+	Refresth maven project once
+	you can find package jar file under target folder
+
+
+
+Naviage to pom.xml folder---->
+
+
+
+	--> Open Command prompt
+
+	cmd:-->    mvn install
+
+		it create snapshot of your project and packaged all environment to jar file
+		, Information you found at target folder
+	
+
+	cmd--mvn eclipse:eclipse 
+		
+		above command update any scripts and modification in eclipse
+
+	cmd--mvn validate
+
+		above command Create snap shot in your folder,
+			Verify maven packaged project or not
+
+	cmd--mvn compile
+		
+		above command list ouput number of resources to compile
+
+	cmd--mvn package
+
+		Execute all tests available
+
+	cmd mvn test
+
+		it execute resources available under maven project
+
+------------------------------jenkins----------------------
+
+	url:--->https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
+
+	--> In Jenkins home website--->under isntallation ----->
+
+		downlod jenkins.war file
+
+
+	-->Move to download location run below command
+
+			java -jar jenkins.war
+
+	--> After command run successfull see ouput in below url
+
+			http://localhost:8080
+
+
+	-->in jenkin window click on manage jenkins
+
+	-->click configure system
+	
+	-->under mvn installation  ,,uncheck install automatically
+
+			set configuration manually
+
+
+	Create New Job In jenkins:--->
+
+		1. Click Item-----> Enter Item Name   
+
+		2. Select maven project
+		
+		3. Click ok button
+
+
+
+
+
+		
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+

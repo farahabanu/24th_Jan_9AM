@@ -33,9 +33,9 @@ public class DataProvider_With_Excel_Intergration
 		int LRnum=sht.getLastRowNum();
 		System.out.println("Row number is => "+LRnum);
 		String data[][];
-		data=new String[LRnum][2];
+		data=new String[LRnum+1][2];
 		
-		for (int i = 0; i < LRnum; i++) 
+		for (int i = 0; i <= LRnum; i++) 
 		{
 			
 			//Iterate for number of cell
